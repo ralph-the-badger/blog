@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# my stuff
+Blog.odt
+.~lock.Doku Blog.odt#
+sass
+

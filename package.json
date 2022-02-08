@@ -2,9 +2,12 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "blog with node",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=production node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "sass": "sass sass/main.scss public/css/style.css -w",
+    "parcel": "parcel server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,24 @@
   "bugs": {
     "url": "https://github.com/ralph-the-badger/blog/issues"
   },
-  "homepage": "https://github.com/ralph-the-badger/blog#readme"
+  "homepage": "https://github.com/ralph-the-badger/blog#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.49.7"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "body-parser": "^1.19.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "helmet": "^5.0.2",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.0"
+  }
 }
