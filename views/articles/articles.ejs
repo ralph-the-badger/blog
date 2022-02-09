@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../includes/header.ejs')%>
+    <title>Blog-Artikel</title>
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <header class="container-fluid hero-area header-articles">
+      <div class="overlay"></div>
+      <h1>Blog</h1>
+    </header>
+    <main class="container">
+      <% articles.forEach(article => { %>
+      <div class="col-3">
+        <div class="card">
+          <div class="card-body">
+            <h3><%= article.title %></h3>
+            <div class="card-date">
+              <%= article.createdAt.toLocaleDateString() %>
+            </div>
+            <div class="card-description">
+              <p><%= article.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+  </body>
+</html>

@@ -9,9 +9,18 @@
   </head>
   <body>
     <%- include('./includes/navigation.ejs') %>
-    <div class="container">
-      <h1><%= pageTitle %></h1>
+    <header class="container-fluid hero-area header-home">
+      <div class="overlay"></div>
+      <h1>Blog</h1>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h1><%= pageTitle %></h1>
+        </div>
+      </div>
     </div>
+    <main class="container"></main>
     <%- include('./includes/footer.ejs') %>
   </body>
 </html>

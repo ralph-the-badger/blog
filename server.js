@@ -1,9 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
+const helmet = require("helmet");
 const bodyParser = require("body-parser");
 
 const homeRoutes = require("./routes/home");
+const articlesRoutes = require("./routes/articles");
 
 dotenv.config({ path: "./config/.env" });
 
@@ -16,11 +18,13 @@ app.set("view engine", "ejs");
 app.set("ejs", "ejs");
 
 // middlewares
+app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // routes
 app.use(homeRoutes);
+app.use("/articles", articlesRoutes);
 
 const port = process.env.PORT || 5000;
 

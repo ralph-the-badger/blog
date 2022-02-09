@@ -4,7 +4,8 @@
   "description": "blog with node",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server.js",
+    "build": "cross-env NODE_ENV=production server.js",
+    "start": "npm run build && node server.js",
     "dev": "cross-env NODE_ENV=development nodemon server.js",
     "sass": "sass sass/main.scss public/css/style.css -w",
     "parcel": "parcel server.js"
@@ -20,9 +21,9 @@
   },
   "homepage": "https://github.com/ralph-the-badger/blog#readme",
   "devDependencies": {
+    "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
-    "babel-loader": "^8.2.3",
     "nodemon": "^2.0.15",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.49.7"
