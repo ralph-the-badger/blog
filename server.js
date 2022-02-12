@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 const homeRoutes = require("./routes/home");
 const articlesRoutes = require("./routes/articles");
@@ -21,6 +22,7 @@ app.set("ejs", "ejs");
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(methodOverride("_method"));
 
 // routes
 app.use(homeRoutes);

@@ -13,22 +13,42 @@
       <div class="overlay"></div>
       <h1>Blog</h1>
     </header>
-    <main class="container">
-      <% articles.forEach(article => { %>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <h3><%= article.title %></h3>
-            <div class="card-date">
-              <%= article.createdAt.toLocaleDateString() %>
-            </div>
-            <div class="card-description">
-              <p><%= article.description %></p>
-            </div>
+    <main class="articles-main-content mt-5">
+      <section class="container mt-3">
+        <div class="row">
+          <% articles.forEach(article => { %>
+          <div class="col-xs-6 col-sm-4 mt-3">
+            
+              <div class="card">
+                <div class="card-body p-4">
+                  <h3 class="card-heading"><%= article.title %></h3>
+                  <div class="card-date">
+                    <%= article.createdAt.toLocaleDateString() %>
+                  </div>
+                  <div class="card-description mt-3">
+                    <p><%= article.description %></p>
+                  </div>
+                  <div class="card-buttons">
+                    <a href="/articles/<%= article.slug %>" class="btn coloredButton projectBlue">Read</a>
+                    <a href="/articles/editArticle/<%= article.id %>" class="btn coloredButton projectOrange">Edit</a>
+                    <form action="/articles/<%= article.id%>?_method=DELETE" method="POST" class="d-inline">
+                      <button type="submit" class="btn coloredButton projectRed">Delete</button>
+                    </form>
+                  </div>
+                </div>
+              </div>      
           </div>
+          <% }) %>
         </div>
-      </div>
-      <% }) %>
+      </section>
+      <section class="container mt-3">
+        <div class="row">
+          <div class="d-flex flex-row-reverse">
+            <a href="/articles/createArticle" class="btn coloredButton projectPurple">Create Article</a>
+          </div>
+        </div> 
+      </section>
+    </main>
     </div>
     <%- include('../includes/footer.ejs') %>
   </body>

@@ -38,6 +38,38 @@ body {
   background-color: #f8f8f8;
 }
 
+.coloredButton {
+  color: #f8f8f8;
+}
+.coloredButton:hover, .coloredButton:focus {
+  opacity: 0.9;
+  color: #f8f8f8;
+}
+
+.projectRed {
+  background-color: #880606;
+}
+
+.projectOrange {
+  background-color: #c27d19;
+}
+
+.projectGreen {
+  background-color: #126e19;
+}
+
+.projectBlue {
+  background-color: #122d6e;
+}
+
+.projectPurple {
+  background-color: #3c126e;
+}
+
+.projectGrey {
+  background-color: #404040;
+}
+
 .hero-area {
   display: flex;
   align-items: center;
@@ -66,6 +98,13 @@ body {
 
 .header-articles {
   background-image: url("/images/blog-header.jpg");
+}
+
+.card {
+  height: 100%;
+}
+.card .card-buttons {
+  text-align: center;
 }
 
 .container h1 {

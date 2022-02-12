@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../includes/header.ejs')%>
+    <title><%= article.title %></title>
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <header class="container-fluid hero-area header-articles">
+      <div class="overlay"></div>
+      <h1><%= article.title %></h1>
+    </header>
+    <main class="article-main-content mt-5">
+      <section class="container mt-3">
+        <div class="row">
+          <div class="col-12">
+            <h1><%= article.title %></h1>
+            <span
+              >created at <%= article.createdAt.toLocaleDateString() %></span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="article-content">
+              <p><%- article.sanitizedHTML %></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container mt-3">
+        <a href="/articles" class="btn coloredButton projectBlue"
+          >Blog Overview</a
+        >
+        <a
+          href="/articles/editArticle/<%= article.id %>"
+          class="btn coloredButton projectOrange"
+          >Edit</a
+        >
+        <form
+          action="/articles/<%= article.id%>?_method=DELETE"
+          method="POST"
+          class="d-inline"
+        >
+          <button type="submit" class="btn coloredButton projectRed">
+            Delete
+          </button>
+        </form>
+      </section>
+    </main>
+    <%- include('../includes/footer.ejs') %>
+  </body>
+</html>
