@@ -1,50 +1,5 @@
 const Article = require("../models/article");
 
-// const articles = [
-//   {
-//     title: "First Article",
-//     createdAt: new Date(),
-//     description: "First Description",
-//     content:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugiat necessitatibus illo quo ratione fugit velit temporibus id. Quis voluptas corporis exercitationem nam nobis? Alias dignissimos sequi corrupti quod iste, esse earum cumque. Iure ex numquam consequatur officiis provident reprehenderit facere optio repellat commodi quos molestiae a expedita mollitia, excepturi velit sit quo, magni nemo impedit eligendi delectus hic, dolor sunt illum. Delectus dolorum laborum, voluptatem neque nam reprehenderit at eveniet ut. Necessitatibus velit eos praesentium, aspernatur, quasi id, dicta aut tempore magni ipsam porro reprehenderit incidunt error itaque est nam deserunt quia dolore. Earum blanditiis eaque omnis accusantium delectus!",
-//   },
-//   {
-//     title: "Second Article",
-//     createdAt: new Date(),
-//     description: "Second Description",
-//     content:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugiat necessitatibus illo quo ratione fugit velit temporibus id. Quis voluptas corporis exercitationem nam nobis? Alias dignissimos sequi corrupti quod iste, esse earum cumque. Iure ex numquam consequatur officiis provident reprehenderit facere optio repellat commodi quos molestiae a expedita mollitia, excepturi velit sit quo, magni nemo impedit eligendi delectus hic, dolor sunt illum. Delectus dolorum laborum, voluptatem neque nam reprehenderit at eveniet ut. Necessitatibus velit eos praesentium, aspernatur, quasi id, dicta aut tempore magni ipsam porro reprehenderit incidunt error itaque est nam deserunt quia dolore. Earum blanditiis eaque omnis accusantium delectus!",
-//   },
-//   {
-//     title: "Third Article",
-//     createdAt: new Date(),
-//     description: "Third Description",
-//     content:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugiat necessitatibus illo quo ratione fugit velit temporibus id. Quis voluptas corporis exercitationem nam nobis? Alias dignissimos sequi corrupti quod iste, esse earum cumque. Iure ex numquam consequatur officiis provident reprehenderit facere optio repellat commodi quos molestiae a expedita mollitia, excepturi velit sit quo, magni nemo impedit eligendi delectus hic, dolor sunt illum. Delectus dolorum laborum, voluptatem neque nam reprehenderit at eveniet ut. Necessitatibus velit eos praesentium, aspernatur, quasi id, dicta aut tempore magni ipsam porro reprehenderit incidunt error itaque est nam deserunt quia dolore. Earum blanditiis eaque omnis accusantium delectus!",
-//   },
-//   {
-//     title: "Fourth Article",
-//     createdAt: new Date(),
-//     description: "Fourth Description",
-//     content:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugiat necessitatibus illo quo ratione fugit velit temporibus id. Quis voluptas corporis exercitationem nam nobis? Alias dignissimos sequi corrupti quod iste, esse earum cumque. Iure ex numquam consequatur officiis provident reprehenderit facere optio repellat commodi quos molestiae a expedita mollitia, excepturi velit sit quo, magni nemo impedit eligendi delectus hic, dolor sunt illum. Delectus dolorum laborum, voluptatem neque nam reprehenderit at eveniet ut. Necessitatibus velit eos praesentium, aspernatur, quasi id, dicta aut tempore magni ipsam porro reprehenderit incidunt error itaque est nam deserunt quia dolore. Earum blanditiis eaque omnis accusantium delectus!",
-//   },
-//   {
-//     title: "Fifth Article",
-//     createdAt: new Date(),
-//     description: "Fifth Description",
-//     content:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugiat necessitatibus illo quo ratione fugit velit temporibus id. Quis voluptas corporis exercitationem nam nobis? Alias dignissimos sequi corrupti quod iste, esse earum cumque. Iure ex numquam consequatur officiis provident reprehenderit facere optio repellat commodi quos molestiae a expedita mollitia, excepturi velit sit quo, magni nemo impedit eligendi delectus hic, dolor sunt illum. Delectus dolorum laborum, voluptatem neque nam reprehenderit at eveniet ut. Necessitatibus velit eos praesentium, aspernatur, quasi id, dicta aut tempore magni ipsam porro reprehenderit incidunt error itaque est nam deserunt quia dolore. Earum blanditiis eaque omnis accusantium delectus!",
-//   },
-//   {
-//     title: "Sixth Article",
-//     createdAt: new Date(),
-//     description: "Sixth Description",
-//     content:
-//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugiat necessitatibus illo quo ratione fugit velit temporibus id. Quis voluptas corporis exercitationem nam nobis? Alias dignissimos sequi corrupti quod iste, esse earum cumque. Iure ex numquam consequatur officiis provident reprehenderit facere optio repellat commodi quos molestiae a expedita mollitia, excepturi velit sit quo, magni nemo impedit eligendi delectus hic, dolor sunt illum. Delectus dolorum laborum, voluptatem neque nam reprehenderit at eveniet ut. Necessitatibus velit eos praesentium, aspernatur, quasi id, dicta aut tempore magni ipsam porro reprehenderit incidunt error itaque est nam deserunt quia dolore. Earum blanditiis eaque omnis accusantium delectus!",
-//   },
-// ];
-
 exports.getArticles = async (req, res, next) => {
   try {
     const articles = await Article.find().sort({ createdAt: "desc" });
