@@ -1,3 +1,19 @@
-<nav>
-  <!-- <p>Navigation</p> -->
+<nav class="navigation">
+  <ul class="nav">
+    <% if(typeof user != "undefined" && user) { %>
+    <div class="left-nav-item">
+      <li class="welcome-message">Welcome <%= user.name %></li>
+    </div>
+    <div class="right-nav-item">
+      <li class="navigation-link"><a href="/logout">Logout</a></li>
+    </div>
+      <% } else { %>
+      <div class="left-nav-item"></div>
+      <div class="right-nav-item">
+        <li class="navigation-link"><a href="/login">Login</a></li>
+        <li class="navigation-link"><a href="/register">Sign up</a></li>
+      </div>  
+      <% } %>
+    </div>
+  </ul>
 </nav>

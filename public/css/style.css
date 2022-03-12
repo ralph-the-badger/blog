@@ -70,6 +70,64 @@ body {
   background-color: #404040;
 }
 
+.errorMessage-info {
+  background-color: #f5dcdc;
+  color: #880606;
+  padding: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.navigation ul {
+  transition: all 0.36 ease;
+}
+.navigation ul li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1em;
+  padding: 0;
+}
+.navigation ul a {
+  padding: 0.5em 0.8em;
+  color: #404040;
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+}
+.navigation ul a::before, .navigation ul a::after {
+  content: "";
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.navigation ul a::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 3px solid #3c126e;
+  border-right: 3px solid #3c126e;
+  transform: translate(-100%, 50%);
+}
+.navigation ul a::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #3c126e;
+  border-left: 3px solid #3c126e;
+  transform: translate(100%, -50%);
+}
+.navigation ul a:hover::before, .navigation ul a:hover::after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.navigation ul a:hover {
+  color: #3c126e;
+}
+
 .hero-area {
   display: flex;
   align-items: center;
@@ -105,6 +163,16 @@ body {
 }
 .card .card-buttons {
   text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav .left-nav-item .welcome-message {
+  font-size: 20px;
+  margin: 0;
+  padding: 10px 16px;
 }
 
 .container h1 {
