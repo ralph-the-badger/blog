@@ -4,8 +4,8 @@ A blog-system template programmed with NodeJS. This blog enables the user to rea
 
 The user can enter a title, a short description and a content. The content can be written as markdown text which is then transcribed to HTML.
 
-Users need to sign up / log in to read articles, to edit and delete them. 
+Users need to sign up / log in to read articles, to edit and delete them.
 
 ## Stack
 
-NodeJS, Express, MongoDB, Mongoose, SASS, Template Engine EJS, Bootstrap, Babel, Parcel, Markdown, Cookie-Parser, JWT, Input Validation
+NodeJS, Express, MongoDB, Mongoose, SASS, Template Engine EJS, Bootstrap, Babel, Parcel, Markdown, Cookie-Parser, JWT and Input Validation (JOI).
