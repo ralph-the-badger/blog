@@ -11,6 +11,7 @@ const homeRoutes = require("./routes/home");
 const authRoutes = require("./routes/auth");
 const articlesRoutes = require("./routes/articles");
 
+// configuration
 dotenv.config({ path: "./config/.env" });
 
 const dbConnection = require("./config/db");
